@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { ChangeEvent } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useAppDispatch } from '../../hooks/redux';
+import { updatePhotoProfile } from '../../store/actions/actionProfile';
 import { IContacts, IProfile } from '../../types/types';
 import styles from './profileInfo.module.css'
 import { ProfilePhoto } from './ProfilePhoto/ProfilePhoto';
@@ -13,13 +15,19 @@ interface IProfileInfo {
 
 export const ProfileInfo: React.FC<IProfileInfo> = (props) => {
   const navigate = useNavigate();
+  const dispatch = useAppDispatch()
   const onClick = () => {
     navigate('/edit')
   }
 
+  const savePhoto = (e: ChangeEvent<HTMLInputElement>) => {
+    if((e.target as HTMLInputElement).files?.length)
+      dispatch(updatePhotoProfile(e.target.files?.[0]))
+  }
+
   return (
     <div className={styles.infoWrapper}>
-      <ProfilePhoto photo={props.profileInfo.photos.large} />
+      <ProfilePhoto savePhoto={savePhoto} photo={props.profileInfo.photos.large} />
       <div className={styles.profileDataWrap}>
         <div className={styles.profileDataTop}>
           <h1 className={styles.dataName}>{props.profileInfo.fullName}</h1>

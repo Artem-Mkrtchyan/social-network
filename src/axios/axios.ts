@@ -1,4 +1,4 @@
-import { IProfile, resultCode, IServerResponse, IDataAuth, IloginForm, IProfileEdit } from './../types/types';
+import { IProfile, resultCode, IServerResponse, IDataAuth, IloginForm, IProfileEdit, IPhotoProfileResponse } from './../types/types';
 import axios from "axios";
 
 export const instansAxios = axios.create({
@@ -25,6 +25,16 @@ export const profileAPI = {
 
   putStatus(status: string) {
    return instansAxios.put<TPutStatus>(`/profile/status`, { status }).then(response => response.data)
+  },
+
+  putPhoto(photo: any) {
+    const fromData = new FormData()
+    fromData.append('image', photo);
+    return instansAxios.put<IServerResponse<IPhotoProfileResponse>>('profile/photo', fromData, {
+      headers: {
+        "Content-Type": "multipart/form-data"
+      }
+    }).then(response => response.data)
   }
 }
 

@@ -11,13 +11,14 @@ export const Login: React.FC = () => {
   const dispatch = useAppDispatch();
   const isAuth = useAppSelector(state => state.auth.isAuth);
   const navigate = useNavigate();
-  const { reset, handleSubmit, control, formState: {errors }} = useForm<IloginForm>({mode: 'onBlur', defaultValues: {email: '', password: ''}});
+  const { reset, handleSubmit, control, formState: {errors }} = useForm<IloginForm>({mode: 'onBlur', defaultValues: {email: '', password: '', rememberMe: false}});
 
   const onSubmitForm: SubmitHandler<IloginForm> = (data) => {
     dispatch(logIn(data))
     reset()
   }
 
+  //Redirect to profile page
   isAuth && navigate('/')
   return (
     <CastomForm  title='Sing In' onSubmit={handleSubmit(onSubmitForm)}>
@@ -43,6 +44,13 @@ export const Login: React.FC = () => {
           name='password'
           render={({ field }) => (
             <Input id='password' label='Password:' type='password' errorMessage={errors.password?.message} value={field.value} onChange={(e) => field.onChange(e)} />
+          )} />
+
+    <Controller
+          control={control}
+          name='rememberMe'
+          render={({ field }) => (
+            <Input id='rememberMe' label='Remember me' typeInputCheckbox={'chexbox'} errorMessage={errors.password?.message} onChange={(e) => field.onChange(e)} />
           )} />
     </CastomForm>
   )

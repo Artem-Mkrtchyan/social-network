@@ -43,3 +43,10 @@ export const updateProfile = (dataEdit: IProfileEdit) => async (dispatch: AppDis
 export const editMode =() => (dispatch: AppDispatch) => {
   dispatch(profileSlice.actions.resetEditMode())
 }
+
+export const updatePhotoProfile = (photo: any) => async (dispatch: AppDispatch) => {
+  const response = await profileAPI.putPhoto(photo);
+  if(response.resultCode === resultCode.Success) {
+    dispatch(profileSlice.actions.updatePhotoProfile(response.data.photos))
+  }
+}

@@ -65,6 +65,9 @@ export const profileSlice = createSlice({
     setProfileStatus(state, action: PayloadAction<string>) {
       state.data.status = action.payload
     },
+    updatePhotoProfile(state, action: PayloadAction<{large: string, small: string}>) {
+      state.data.profile.photos = action.payload
+    },
     updataProfileInfo(state, action: PayloadAction<IProfileEdit>) {
       state.loading = false
       state.data.editMode = true

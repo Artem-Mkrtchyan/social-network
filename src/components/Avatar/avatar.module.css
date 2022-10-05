@@ -9,11 +9,16 @@
   height: 40px;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
   background-color: #f2f7e1;
   border-radius: 100%;
 }
 
-.wrapperAvatar > * {
+.img {
+  object-fit: contain;
+}
+
+.wrapperAvatar > svg {
   width: 80%;
   height: 80%;
 }

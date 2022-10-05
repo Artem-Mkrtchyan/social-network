@@ -12,14 +12,14 @@ export type IProfile = {
 }
 
 export interface IContacts {
-    github: string
-    vk: string
-    facebook: string
-    instagram: string
-    twitter: string
-    website: string
-    youtube: string
-    mainLink: string
+  github: string
+  vk: string
+  facebook: string
+  instagram: string
+  twitter: string
+  website: string
+  youtube: string
+  mainLink: string
 }
 
 export interface IProfileEdit {
@@ -28,6 +28,13 @@ export interface IProfileEdit {
   lookingForAJob: boolean
   lookingForAJobDescription: string
   fullName: string
+}
+
+export interface IPhotoProfileResponse {
+  photos: {
+    small: string
+    large: string
+  }
 }
 
 
@@ -41,6 +48,14 @@ export interface IloginForm {
   email: string
   password: string
   rememberMe: boolean
+}
+
+export interface IUsers {
+  name: string,
+  id: number,
+  photos: IPhotoProfileResponse
+  status: string,
+  followed: boolean
 }
 
 export interface IServerResponse<T> {

@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { ChangeEvent } from 'react';
 import styles from './profilePhoto.module.css';
 
 interface IProps {
-  photo?: string
+  photo: string
+  savePhoto: (e: ChangeEvent<HTMLInputElement>) => void
 }
 
 export const ProfilePhoto: React.FC<IProps> = (props) => {
@@ -20,7 +21,7 @@ export const ProfilePhoto: React.FC<IProps> = (props) => {
       <div className={styles.editBlock}>
         <div className={styles.editImg}>
         <label className={styles.label} htmlFor="editImg">Edit photo</label>
-        <input className={styles.input} type="file" id='editImg'/>
+        <input className={styles.input} onChange={(e) => props.savePhoto(e)} type="file" id='editImg'/>
         </div>
       </div>
     </div>
