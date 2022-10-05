@@ -1,0 +1,7 @@
+.wrapper {
+  min-height: 100%;
+  display: grid;
+  grid-template: minmax(min-content, auto) 1fr minmax(106px, auto) / 1fr ;
+  row-gap: 30px;
+  overflow: hidden;
+}

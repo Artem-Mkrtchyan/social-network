@@ -1,0 +1,26 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+}
+.wrapperAvatar {
+  display: flex;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  background-color: #f2f7e1;
+  border-radius: 100%;
+}
+
+.wrapperAvatar > * {
+  width: 80%;
+  height: 80%;
+}
+
+.name {
+  font-size: 18px;
+  color: #f2f7e1;
+}
+
+

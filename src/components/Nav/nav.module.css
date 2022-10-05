@@ -1,0 +1,38 @@
+.nav {
+  padding: 20px 0;
+  grid-column: 1 / span 2;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 0px 0px 10px #b9c4bc;
+}
+
+.title {
+  padding: 0 10px;
+  text-transform: uppercase;
+  color: #737874;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+}
+
+.item {
+  display: flex;
+  color: #5d5e5e;
+  transition: background-color .2s ease-in-out, color .2s ease-in-out;
+}
+
+.item > * {
+  flex: 1 1 auto;
+  padding: 7px 10px;
+}
+
+.item:hover {
+  color: #2f3030;
+  background-color: rgba(237, 237, 220, .5);
+}
+

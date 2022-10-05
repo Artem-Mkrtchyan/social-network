@@ -1,0 +1,65 @@
+.infoWrapper {
+  display: flex;
+  column-gap: 30px;
+}
+
+.profileDataWrap {
+  flex: 1 1 80%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+}
+.profileData {
+  display: flex;
+
+}
+
+.aboutMeWpap {
+  max-width: 90%;
+  padding: 10px 0;
+  border-bottom: 1px solid #68714a;
+}
+
+.infoList {
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px ;
+}
+
+.infoItem {
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+}
+
+
+.listData {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  row-gap: 15px;
+}
+
+.itemData {
+  display: flex;
+  align-items: center;
+  column-gap: 30px;
+}
+
+.itemTitle {
+  flex: 0 0 20%
+}
+.itemInfo {
+  flex: 1 1 80%
+}
+
+.buttonEdit {
+  align-self: flex-start;
+  display: block;
+  padding: 5px 20px;
+  text-align: center;
+  color: #68714a;
+  cursor: pointer;
+  font-weight: 700;
+}
+

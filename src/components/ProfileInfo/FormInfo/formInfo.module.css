@@ -1,0 +1,13 @@
+.serverError {
+  color: red;
+}
+
+.editSuccess {
+  color: green
+}
+
+.serverError,
+.editSuccess {
+  margin-top: 20px;
+  text-align: center;
+}
