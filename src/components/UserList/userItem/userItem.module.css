@@ -1,0 +1,50 @@
+.userItem {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+
+.photoWrap {
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.img {
+  display: block;
+}
+
+.info {
+  display: grid;
+  align-items: center;
+  gap: 8px 5px;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: repeat(2, auto);
+}
+
+.status {
+  grid-row: 2/-1;
+  grid-column: span 2;
+}
+
+.follow {
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: #f2f7e1;
+  font-weight: 700;
+  background-color: #0095B6;
+}
+.follow, .unfollow {
+  transition: background-color .3s ease-in-out, box-shadow .3s ease-in-out;
+}
+
+.follow:hover {
+  box-shadow: 0 0 8px #0095B6;
+}
+
+.unfollow {
+  background-color: #FC5185;
+}
+
+.unfollow:hover {
+  box-shadow: 0 0 8px #FC5185;
+}

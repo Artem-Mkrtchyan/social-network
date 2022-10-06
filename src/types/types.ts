@@ -53,9 +53,18 @@ export interface IloginForm {
 export interface IUsers {
   name: string,
   id: number,
-  photos: IPhotoProfileResponse
+  photos: {
+    small: string
+    large: string
+  }
   status: string,
   followed: boolean
+}
+
+export interface IUsersDataResp {
+  items: Array<IUsers>,
+  totalCount: number
+  error: string
 }
 
 export interface IServerResponse<T> {

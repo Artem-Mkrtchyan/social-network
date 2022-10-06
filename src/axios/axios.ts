@@ -1,4 +1,4 @@
-import { IProfile, resultCode, IServerResponse, IDataAuth, IloginForm, IProfileEdit, IPhotoProfileResponse } from './../types/types';
+import { IProfile, resultCode, IServerResponse, IDataAuth, IloginForm, IProfileEdit, IPhotoProfileResponse, IUsersDataResp } from './../types/types';
 import axios from "axios";
 
 export const instansAxios = axios.create({
@@ -9,6 +9,10 @@ export const instansAxios = axios.create({
   }
 })
 
+type TPutStatus = {
+  resultCode: resultCode
+  messages: Array<string>,
+}
 
 export const profileAPI = {
   getProfile(userId: number) {
@@ -38,12 +42,6 @@ export const profileAPI = {
   }
 }
 
-type TPutStatus = {
-  resultCode: resultCode
-  messages: Array<string>,
-}
-
-
 export const authAPI = {
   getMe() {
     return instansAxios.get<IServerResponse<IDataAuth>>('/auth/me').then(response => response.data)
@@ -53,5 +51,11 @@ export const authAPI = {
   },
   logIn(data: IloginForm) {
     return instansAxios.post<IServerResponse<IDataAuth>>('/auth/login', data).then(response => response.data)
+  }
+}
+
+export const usersAPI = {
+  getUsers(currentPage: number = 1, pageSize: number = 10) {
+    return instansAxios.get<IUsersDataResp>(`users?page=${currentPage}&count=${pageSize}`).then(response => response.data)
   }
 }
