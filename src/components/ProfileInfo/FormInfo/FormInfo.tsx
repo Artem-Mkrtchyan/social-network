@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 import { useForm, SubmitHandler, Controller } from "react-hook-form";
 import { useAppDispatch, useAppSelector } from '../../../hooks/redux';
 import { editMode, updateProfile } from '../../../store/actions/actionProfile';
-import { IProfileEdit } from '../../../types/types';
+import { IProfileEdit } from '../../../types/profileType';
 import { CastomForm } from '../../common/CastomForm/CastomForm';
 import { Input } from '../../common/Input/Input';
 import { Textarea } from '../../common/Textarea/Textarea';
@@ -40,7 +40,7 @@ export const FormInfo: React.FC = () => {
 
   return (
     <>
-      <CastomForm title='Edit my profile' onSubmit={handleSubmit(onSubmit)}>
+      <CastomForm errorMessage={errorMessage} title='Edit my profile' onSubmit={handleSubmit(onSubmit)}>
         <Controller
           control={control}
           name='fullName'
@@ -162,7 +162,6 @@ export const FormInfo: React.FC = () => {
             <Input id='contacts.youtube' label='Youtube' type='text' errorMessage={errors.contacts?.youtube?.message} value={field.value} onChange={(e) => field.onChange(e)} />
           )} />
       </CastomForm>
-            {errorMessage && <p className={styles.serverError}>{`${errorMessage}`}</p>}
             {editModeFlag && <p className={styles.editSuccess}>{`Your profile has been successfully updated.`}</p>}
     </>
   )

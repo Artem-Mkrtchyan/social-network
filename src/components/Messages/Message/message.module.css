@@ -1,0 +1,19 @@
+.messageBlock {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+}
+
+.textWrapp {
+  display: flex;
+  flex-direction: column;
+}
+
+.textWrapp a {
+  padding: 5px 0;
+  color: #0095B6;
+}
+
+.textWrapp a:hover {
+  color: #00566a;
+}

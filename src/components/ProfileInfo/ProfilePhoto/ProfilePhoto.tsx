@@ -1,12 +1,20 @@
 import React, { ChangeEvent } from 'react';
+import { useAppDispatch } from '../../../hooks/redux';
+import { updatePhotoProfile } from '../../../store/actions/actionProfile';
 import styles from './profilePhoto.module.css';
 
 interface IProps {
   photo: string
-  savePhoto: (e: ChangeEvent<HTMLInputElement>) => void
+  editMode: boolean
 }
 
 export const ProfilePhoto: React.FC<IProps> = (props) => {
+
+  const dispatch = useAppDispatch()
+  const savePhoto = (e: ChangeEvent<HTMLInputElement>) => {
+    if((e.target as HTMLInputElement).files?.length)
+      dispatch(updatePhotoProfile(e.target.files?.[0]))
+  }
   return (
     <div className={styles.pagePhoto}>
         <div className={styles.imgWrapper}>
@@ -18,12 +26,12 @@ export const ProfilePhoto: React.FC<IProps> = (props) => {
           </svg>
         }
     </div>
-      <div className={styles.editBlock}>
+      {props.editMode && <div className={styles.editBlock}>
         <div className={styles.editImg}>
         <label className={styles.label} htmlFor="editImg">Edit photo</label>
-        <input className={styles.input} onChange={(e) => props.savePhoto(e)} type="file" id='editImg'/>
+        <input className={styles.input} onChange={(e) => savePhoto(e)} type="file" id='editImg'/>
         </div>
-      </div>
+      </div>}
     </div>
   )
 }

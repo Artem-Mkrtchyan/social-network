@@ -1,11 +1,17 @@
 import React from 'react';
-import { IUsers } from '../../../types/types';
 import defaultImg from '../../../assets/img/default.jpg';
 import classNames from 'classnames';
 import styles from './userItem.module.css';
 import { NavLink } from 'react-router-dom';
+import { IUsers } from '../../../types/usersType';
 
-export const UserItem: React.FC<IUsers> = (props) => {
+interface IProps {
+  props: IUsers,
+  disabled: boolean
+  subscribe: (id: number ,follow: boolean) => void
+}
+
+export const UserItem: React.FC<IProps> = React.memo(({props, disabled, subscribe}) => {
   const buttonFollowClass = classNames({
     [styles.follow]: true,
     [styles.unfollow]: props.followed
@@ -22,8 +28,14 @@ export const UserItem: React.FC<IUsers> = (props) => {
       <div className={styles.info}>
         <h4 className={styles.userName}>{props.name}</h4>
         {props.status && <span className={styles.status}>{props.status}</span>}
-        <button className={buttonFollowClass}>{props.followed ? 'Unfollow' : 'Follow'}</button>
+        <button
+          className={buttonFollowClass}
+          onClick={() => subscribe(props.id, props.followed)}
+          disabled={disabled}
+        >
+          {props.followed ? 'Unfollow' : 'Follow'}
+        </button>
       </div>
     </li>
   )
-}
+})

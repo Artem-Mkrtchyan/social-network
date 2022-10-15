@@ -1,0 +1,37 @@
+.sectionChat {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  row-gap: 30px;
+  height: 100%;
+}
+
+.formMessage {
+  display: flex;
+  column-gap: 15px;
+  align-items: center;
+}
+
+.textarea {
+  flex: 1 1 50%;
+  padding: 5px 10px;
+  font-size: 16px;
+  color:  #5d5e5e;
+  border-radius: 10px;
+  border-color: #68714a;
+  resize: none;
+}
+
+.formButton {
+  padding: 8px 30px;
+  font-size: 16px;
+  background-color: #68714a;
+  border-radius: 10px;
+  color: #f2f7e1;
+  transition: background-color .3s ease-in-out;
+  align-self: center;
+}
+
+.button:disabled{
+  background-color: grey;
+}

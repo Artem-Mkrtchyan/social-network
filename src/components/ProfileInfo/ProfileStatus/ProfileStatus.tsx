@@ -1,12 +1,12 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 
 interface IProps {
   status: string
-  updateStatus: (status: string) => void
+  editMode: boolean
+  updateStatus?: (status: string) => void
 }
 
 export const ProfileStatus: React.FC<IProps> = (props) => {
-
   const [editMode, setEditMode] = useState(false);
   const [status, setStatus] = useState(props.status);
 
@@ -16,12 +16,13 @@ export const ProfileStatus: React.FC<IProps> = (props) => {
 
 
   const activeEditMode = () => {
-    setEditMode(true)
+    props.editMode && setEditMode(true)
   }
+
 
   const deactiveEditMore = () => {
     setEditMode(false)
-    props.updateStatus(status)
+    props.updateStatus && props.updateStatus(status)
   }
 
   const onStatusChange = (e: React.ChangeEvent<HTMLInputElement>) => {

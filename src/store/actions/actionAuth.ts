@@ -1,8 +1,8 @@
-import { IloginForm } from './../../types/types';
 import { authSlice } from './../slices/authSlice';
 import { authAPI } from './../../axios/axios';
 import { AppDispatch } from "../store";
-import { resultCode } from '../../types/types';
+import { resultCode } from '../../types/axiosType';
+import { IloginForm } from '../../types/authType';
 
 
 export const getDataAuth = () => async (dispatch: AppDispatch) => {
@@ -35,7 +35,7 @@ export const logIn = (data: IloginForm) => async (dispatch: AppDispatch) => {
     const response = await authAPI.logIn(data);
     if (response.resultCode === resultCode.Success) {
       dispatch(getDataAuth())
-    } else throw Error('Authorisation Error')
+    } else throw Error(response.messages.join(''))
   } catch (error) {
     dispatch(authSlice.actions.fetchError(error as Error))
   }

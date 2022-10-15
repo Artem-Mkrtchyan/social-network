@@ -1,13 +1,5 @@
-import { IDataAuth } from './../../types/types';
-
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-
-interface IAuthState {
-  loading: boolean,
-  error: string,
-  isAuth: boolean
-  data: IDataAuth
-}
+import { IAuthState, IDataAuth } from '../../types/authType';
 
 const initialState: IAuthState = {
   loading: false,
@@ -29,7 +21,8 @@ export const authSlice = createSlice({
       state.loading = true
     },
     setUserData(state, action: PayloadAction<IDataAuth>) {
-      state.loading = false
+      state.loading = false;
+      state.error = '';
       state.data.id = action.payload.id
       state.data.login = action.payload.login
       state.data.email = action.payload.email

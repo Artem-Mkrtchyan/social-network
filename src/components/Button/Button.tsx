@@ -1,13 +1,12 @@
-import React from 'react';
+import React, {ButtonHTMLAttributes} from 'react';
 import styles from './button.module.css'
 
-interface IButton {
+interface IButton extends ButtonHTMLAttributes<HTMLButtonElement>{
   name: string
-  onClick?: () => void
 }
 
-export const Button: React.FC<IButton> = ({name, onClick, ...props}) => {
+export const Button: React.FC<IButton> = ({name, ...props}) => {
   return (
-    <button className={styles.button} onClick={onClick} {...props}>{name}</button>
+    <button className={styles.button} {...props}>{name}</button>
   )
 }

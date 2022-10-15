@@ -13,10 +13,7 @@ export const Nav: React.FC = () => {
           <Link to='/'>Profile</Link>
         </li>
         <li className={styles.item}>
-          <Link to='/friends'>Friends</Link>
-        </li>
-        <li className={styles.item}>
-          <Link to='/message'>Messages</Link>
+          <Link to='/chat'>Chat</Link>
         </li>
         <li className={styles.item}>
           <Link to='/users'>Users</Link>

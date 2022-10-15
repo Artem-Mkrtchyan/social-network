@@ -1,16 +1,5 @@
-import { IProfileEdit } from './../../types/types';
-import { IProfile } from "../../types/types";
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-
-interface ProfileState {
-  loading: boolean,
-  error: string,
-  data: {
-    profile: IProfile
-    status: string
-    editMode: boolean
-  }
-}
+import { IProfile, IProfileEdit, ProfileState } from '../../types/profileType';
 
 const initialState: ProfileState = {
   loading: false,
@@ -52,6 +41,7 @@ export const profileSlice = createSlice({
     },
     fetchSuccess(state, action: PayloadAction<IProfile>) {
       state.loading = false
+      state.error = '';
       state.data.profile = action.payload
     },
     fetchError(state, action: PayloadAction<Error>) {

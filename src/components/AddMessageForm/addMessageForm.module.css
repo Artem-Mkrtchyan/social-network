@@ -1,0 +1,21 @@
+.from {
+  display: flex;
+  column-gap: 15px;
+  align-items: center;
+}
+
+.entryField {
+  flex-basis: 50%;
+  min-height: 37px;
+  padding: 10px 17px;
+  border-radius: 10px;
+  border-color: #737874;
+  color: #737874;
+  outline: none;
+  resize: none;
+}
+
+.sybmitButton {
+
+}
+

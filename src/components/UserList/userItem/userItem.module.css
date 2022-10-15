@@ -33,6 +33,11 @@
   font-weight: 700;
   background-color: #0095B6;
 }
+
+.follow:disabled {
+  background-color: grey;
+}
+
 .follow, .unfollow {
   transition: background-color .3s ease-in-out, box-shadow .3s ease-in-out;
 }

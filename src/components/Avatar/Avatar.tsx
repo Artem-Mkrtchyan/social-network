@@ -2,11 +2,10 @@ import React from 'react';
 import styles from './avatar.module.css'
 
 type IProps = {
-  img: string
-  name: string
+  img?: string
+  name?: string
 }
 
-console.log('click')
 export const Avatar: React.FC<IProps> = (props) => {
   return (
     <div className={styles.wrapper}>
@@ -20,7 +19,7 @@ export const Avatar: React.FC<IProps> = (props) => {
           </svg>
         }
       </div>
-      <p className={styles.name}>{props.name}</p>
+      {props.name && <p className={styles.name}>{props.name}</p>}
     </div>
   )
 }

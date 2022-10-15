@@ -1,5 +1,5 @@
-import { IProfileEdit } from './../../types/types';
-import { resultCode } from '../../types/types';
+import { resultCode } from '../../types/axiosType';
+import { IProfileEdit } from '../../types/profileType';
 import { profileSlice } from '../slices/profileSlice';
 import { profileAPI } from './../../axios/axios';
 import { AppDispatch } from './../store';
