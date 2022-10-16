@@ -1,3 +1,7 @@
+# To test the application is provided:
+ ## login: text.social@yandex.ru
+ ## password: 12345
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
