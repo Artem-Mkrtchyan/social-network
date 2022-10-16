@@ -8,7 +8,8 @@ const initialState: IAuthState = {
   data: {
     id: null,
     email: null,
-    login: null
+    login: null,
+    captcha: null
   }
 }
 
@@ -23,9 +24,13 @@ export const authSlice = createSlice({
     setUserData(state, action: PayloadAction<IDataAuth>) {
       state.loading = false;
       state.error = '';
-      state.data.id = action.payload.id
-      state.data.login = action.payload.login
-      state.data.email = action.payload.email
+      state.data = action.payload
+      // state.data.id = action.payload.id
+      // state.data.login = action.payload.login
+      // state.data.email = action.payload.email
+    },
+    setCaptchaURL(state, action: PayloadAction<string>) {
+      state.data.captcha = action.payload
     },
     isAuth(state, action: PayloadAction<boolean>) {
       state.isAuth = action.payload

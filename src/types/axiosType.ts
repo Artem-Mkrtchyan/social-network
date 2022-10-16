@@ -11,5 +11,6 @@ export type TPutStatus = {
 
 export enum resultCode {
   Success = 0,
-  Error = 1
+  Error = 1,
+  Captcha = 10
 }

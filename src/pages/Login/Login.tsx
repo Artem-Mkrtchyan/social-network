@@ -1,18 +1,19 @@
 import React from 'react';
 import { useForm, SubmitHandler, Controller } from 'react-hook-form';
+import { selectors } from '../../store/selectors';
 import { useNavigate } from 'react-router-dom';
+import { CaptchaSecure } from '../../components/common/CaptchaSecure/CaptchaSecure';
 import { CastomForm } from '../../components/common/CastomForm/CastomForm';
 import { Input } from '../../components/common/Input/Input';
 import { useAppDispatch, useAppSelector } from '../../hooks/redux';
 import { logIn } from '../../store/actions/actionAuth';
-import { selectors } from '../../store/selectors';
 import { IloginForm } from '../../types/authType';
 
 export const Login: React.FC = () => {
   const dispatch = useAppDispatch();
-  const { isAuth, error } = useAppSelector(selectors.authState);
+  const { isAuth, error, data } = useAppSelector(selectors.authState);
   const navigate = useNavigate();
-  const { reset, handleSubmit, control, formState: { errors } } = useForm<IloginForm>({ mode: 'onBlur', defaultValues: { email: '', password: '', rememberMe: false } });
+  const { reset, handleSubmit, control, formState: { errors } } = useForm<IloginForm>({ mode: 'onBlur', defaultValues: { email: '', password: '', rememberMe: false, captcha: null } });
 
   const onSubmitForm: SubmitHandler<IloginForm> = (data) => {
     dispatch(logIn(data))
@@ -53,6 +54,13 @@ export const Login: React.FC = () => {
         render={({ field }) => (
           <Input id='rememberMe' label='Remember me' typeInputCheckbox={'chexbox'} errorMessage={errors.password?.message} onChange={(e) => field.onChange(e)} />
         )} />
+
+      {data.captcha && <Controller
+        control={control}
+        name='captcha'
+        render={({ field }) => (
+          <CaptchaSecure img={data.captcha} onChange={(e) => field.onChange(e)} />
+        )} />}
     </CastomForm>
   )
 }

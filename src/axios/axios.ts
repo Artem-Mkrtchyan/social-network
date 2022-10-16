@@ -52,6 +52,12 @@ export const authAPI = {
   }
 }
 
+export const securityAPI = {
+  getCatpcha () {
+    return instansAxios.get<{url: string}>('security/get-captcha-url').then(response => response.data)
+  }
+}
+
 export const usersAPI = {
   getUsers(currentPage: number = 1, pageSize: number = 10) {
     return instansAxios.get<IUsersDataResp>(`users?page=${currentPage}&count=${pageSize}`).then(response => response.data)

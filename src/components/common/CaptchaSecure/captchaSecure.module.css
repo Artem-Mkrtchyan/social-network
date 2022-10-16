@@ -1,0 +1,13 @@
+.captchaWrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.captchaInput {
+  padding: 5px 10px;
+  color: #737874;
+}
+
+.captchaInput:focus {
+  outline-color: #68714a;
+}
