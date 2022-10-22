@@ -1,6 +1,6 @@
-# To test the application is provided:
- ## login: text.social@yandex.ru
- ## password: 12345
+## To test the application is provided:
+ ### login: text.social@yandex.ru
+ ### password: 12345
 
 # Getting Started with Create React App
 
