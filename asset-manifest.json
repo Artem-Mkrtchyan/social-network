@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/social-network/static/css/main.305981d3.css",
+    "main.js": "/social-network/static/js/main.4baa1147.js",
+    "static/media/MullerLightItalic.woff": "/social-network/static/media/MullerLightItalic.4f7d667f3be0cb132dc2.woff",
+    "static/media/MullerRegularItalic.woff": "/social-network/static/media/MullerRegularItalic.a9983a549c4000d07bae.woff",
+    "static/media/MullerMedium.woff": "/social-network/static/media/MullerMedium.e4afbbd09b05b2b18798.woff",
+    "static/media/MullerBold.woff": "/social-network/static/media/MullerBold.53c7c067015e4cf16c43.woff",
+    "static/media/MullerRegular.woff": "/social-network/static/media/MullerRegular.3582a987cefb6de667ff.woff",
+    "static/media/MullerLightItalic.woff2": "/social-network/static/media/MullerLightItalic.cc70b555d5ccbdcca659.woff2",
+    "static/media/MullerRegularItalic.woff2": "/social-network/static/media/MullerRegularItalic.86c87ae765250948b078.woff2",
+    "static/media/MullerMedium.woff2": "/social-network/static/media/MullerMedium.f6aac750cee75133b7dc.woff2",
+    "static/media/MullerBold.woff2": "/social-network/static/media/MullerBold.316a8c43859c0af04035.woff2",
+    "static/media/MullerRegular.woff2": "/social-network/static/media/MullerRegular.33ae73af0bab56f7dd13.woff2",
+    "static/media/default.jpg": "/social-network/static/media/default.a6d8566b2398a625ea5c.jpg",
+    "index.html": "/social-network/index.html",
+    "main.305981d3.css.map": "/social-network/static/css/main.305981d3.css.map",
+    "main.4baa1147.js.map": "/social-network/static/js/main.4baa1147.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.305981d3.css",
+    "static/js/main.4baa1147.js"
+  ]
+}
