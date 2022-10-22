@@ -1,3 +1,6 @@
+This application is a social network for a community in which everyone communicates in a general chat. In this project, the goal was to figure out how redux interacts with react and work with global state, working with a hook. Also, the interaction of the application with the Rest API and working with the web socket.
+
+
 ## To test the application is provided:
  ### login: text.social@yandex.ru
  ### password: 12345
